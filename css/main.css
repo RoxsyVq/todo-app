@@ -1,0 +1,34 @@
+/* - Tareas - */
+
+body{
+    background: url("http://iphoneros.com/wp-content/uploads/2013/08/10.jpg");
+    background-size: cover;
+    font-family: "Clarendon Blk BT";
+}
+#lista {
+    list-style: none;
+}
+
+ .div {
+    border-bottom: 1px solid #B6B6B6;
+     background: #ccc;
+    list-style: none;
+     margin-top: 20px;
+     padding: 10px;
+}
+
+
+
+.checked {
+ border-bottom: 1px solid #B6B6B6;
+     background: #ccc;
+    list-style: none;
+     margin-top: 20px;
+     padding: 10px;
+  text-decoration: line-through;
+}
+.titulo{
+    font-size: 25px;
+    font-weight: bold;
+}
+
