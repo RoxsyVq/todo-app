@@ -1,3 +1,75 @@
+var listaTareas=[];
+//boton 
+function agregar(){
+    var lista=document.getElementById("lista");
+    var texto=document.getElementById("texto");
+    
+    listaTareas.push({nombre:texto.value,isDone:false});
+    drawTaskList();
+	texto.value="";
+	texto.focus;
+	
+}
+//agragar tareas
+function drawTaskList(){
+ 
+    var lista=document.getElementById("lista");
+    lista.innerHTML="";
+    for (var i in listaTareas){
+        var html="<li class='div "+(listaTareas[i].isDone?"check":"")+"'><input onclick='line("+i+")' type='checkbox' "+(listaTareas[i].isDone?"checked":"")+">"+listaTareas[i].nombre+"<i onclick='remove("+i+")'class='glyphicon  glyphicon-trash pull-right ico'"+"</li>";
+        lista.innerHTML+=html;
+    }
+    
+  
+    
+}
+
+//funcion line-through tachado
+function line(_indice){
+    if(listaTareas[_indice].isDone==false){
+        listaTareas[_indice].isDone=true;
+    }
+    else{
+        listaTareas[_indice].isDone=false;
+    }
+    drawTaskList();
+}
+// eliminar lista 
+
+
+function remove(_line){
+   
+   listaTareas.splice(_line,1);
+    drawTaskList();
+
+}
+
+
+
+//trabajo con Array
+/*var listaTareas=[
+    ["t1",true],
+    ["t2",false],
+    ["t3",true]
+];
+function drawTaskList(){
+    var lista=document.getElementById("lista");
+    for (var i in listaTareas){
+        var html="<li><input type='checkbox' "+(listaTareas[i][1]?"checked":"")+">"+listaTareas[i][0]+"</li>";
+        lista.innerHTML+=html;
+    }
+}*/
+
+
+
+
+
+/*var agregar=document.getElementById("agregar");
+agregar.addEventListener("click",onButtonClick);
+function onButtonClick(evt){
+    agregarMensaje();
+}
+
 var lista =document.getElementById("lista");
 function agregarMensaje()
 {
@@ -46,6 +118,6 @@ check.addEventListener('click', function(ev) {
   }
 }, false);
 
-}
+}*/
 
 
